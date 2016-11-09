@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -38,12 +39,49 @@ public class resp extends HttpServlet {
 		if(pass.equals(repass))
 		{
 			
+			SessionFactory sessionFactory =  new Configuration().configure().buildSessionFactory();        		
+		       
+		       Session session =	sessionFactory.openSession();
+		       session.beginTransaction();
+
+		       Query queryResult = session.createQuery("from Userdet");
+		       java.util.List allUsers;
+		       String pa,na;
+		       
+		       allUsers = queryResult.list();
+		       int f;
+		       f=0;
+		       for (int i = 0; i < allUsers.size(); i++) {
+		        Userdet user = (Userdet) allUsers.get(i);
+		        pa=user.getAdmno();
+		        na=user.getUserName();
+		        if(admno.equals(pa)){
+		         f=1;
+		         break;
+		         }
+		        }
+		         
+		           if(f!=1){
+		    Userdet user= new Userdet();  
+		      
+		       user.setUserName(name);
+		       user.setPass(pass);
+		       user.setEmail(email);
+		       user.setAdmno(admno);
+		       session.save(user);
+		       session.getTransaction().commit();
+		       session.close(); 
+		       user=null;
+		       System.out.println(name);
+		       response.sendRedirect("dash.jsp");
+		           } 
+		           else
+		           {   System.out.println("duplicate");
+		           }
+		           
+			 }
+
 		
-	      PrintWriter out = response.getWriter();
-			
-			hiberterst s1=new hiberterst();
-			s1.values(name, pass, email,admno);
-		}
 		else
 		{
 			System.out.println("pass do not match");

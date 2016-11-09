@@ -28,7 +28,7 @@ public class hiberterst {
        
        allUsers = queryResult.list();
        int f;
-       f=0;
+       f=0; 
        for (int i = 0; i < allUsers.size(); i++) {
         Userdet user = (Userdet) allUsers.get(i);
         pa=user.getAdmno();
