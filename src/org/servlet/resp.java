@@ -57,7 +57,7 @@ public class resp extends HttpServlet {
 		        na=user.getUserName();
 		        if(admno.equals(pa)){
 		         f=1;
-		         break;
+		         break; 
 		         }
 		        }
 		         
@@ -73,12 +73,12 @@ public class resp extends HttpServlet {
 		       session.close(); 
 		       user=null;
 		       System.out.println(name);
-		       response.sendRedirect("dash.jsp");
+		       response.sendRedirect("ckeditor/samples/dash.html");
 		           } 
 		           else
 		           {   System.out.println("duplicate");
 		           }
-		           
+		            
 			 }
 
 		

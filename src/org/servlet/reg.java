@@ -53,7 +53,7 @@ public class reg extends HttpServlet {
 	        if(na.equals(nam) && pa.equals(pas))
 	        {
 	        	System.out.println("welcom");
-	        f=1;
+	        f=1; 
 	        	
 	        	break; 
 	        }
@@ -62,7 +62,7 @@ public class reg extends HttpServlet {
 	       System.out.println("delievered");
 	       if(f==1)
 	       {
-	    	   response.sendRedirect("dash.jsp");
+	    	   response.sendRedirect("ckeditor/samples/dash.html");
 	       }
 	       else
 	       {
