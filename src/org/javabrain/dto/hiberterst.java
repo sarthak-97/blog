@@ -48,7 +48,7 @@ public class hiberterst {
        user.setAdmno(admno);
        session.save(user);
        session.getTransaction().commit();
-       session.close();
+       session.close(); 
        user=null;
        System.out.println(name);
            }
