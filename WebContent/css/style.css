@@ -1,0 +1,30 @@
+input[type=range] + .thumb
+{
+	background-color: #000;
+}
+
+.input-field .prefix.active {
+	color:#000 !important;
+}
+.input-field label{
+	color: #000 !important;
+}
+.footer_row{
+
+  margin-bottom: 0px !important;
+}
+
+#social_login_button
+{
+  padding-top: 15px;
+}
+
+label {
+    font-size: 0.8rem;
+    color: #000 !important;
+}
+/*.row1{
+	height: 100px !important;
+}*/
+
+
