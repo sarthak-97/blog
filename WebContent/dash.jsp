@@ -2,7 +2,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>CKEditor Sample</title>
-	<script src="../ckeditor.js"></script>
+	<script src="ckeditor/ckeditor.js"></script>
 	<script src="ckeditor/samples/js/sample.js"></script>
 	<link rel="stylesheet" href="ckeditor/samples/css/samples.css">
 	<link rel="stylesheet" href="ckeditor/samples/toolbarconfigurator/lib/codemirror/neo.css">

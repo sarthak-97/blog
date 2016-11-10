@@ -62,7 +62,7 @@ public class reg extends HttpServlet {
 	       System.out.println("delievered");
 	       if(f==1)
 	       {
-	    	   response.sendRedirect("ckeditor/samples/dash.html");
+	    	   response.sendRedirect("dash.jsp");
 	       }
 	       else
 	       {

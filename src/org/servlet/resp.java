@@ -73,7 +73,7 @@ public class resp extends HttpServlet {
 		       session.close(); 
 		       user=null;
 		       System.out.println(name);
-		       response.sendRedirect("ckeditor/samples/dash.html");
+		       response.sendRedirect("dash.jsp");
 		           } 
 		           else
 		           {   System.out.println("duplicate");
