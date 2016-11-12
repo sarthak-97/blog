@@ -69,7 +69,7 @@ public class reg extends HttpServlet {
 	       }
 	       else
 	       {
-	    	   response.sendRedirect("home.jsp");
+	    	   response.sendRedirect("h.html");
 	       }
 	       
 	     

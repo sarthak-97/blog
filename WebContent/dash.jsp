@@ -13,7 +13,7 @@
 </head>
 <body> 
  <nav>
- <a href=h.html>logout</a>
+ <a href=h.html>Logout</a>
  </nav>
 
 	<form action="text" method="post">
