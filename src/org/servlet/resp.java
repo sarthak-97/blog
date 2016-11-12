@@ -76,25 +76,30 @@ public class resp extends HttpServlet {
 		       user=null;
 		       System.out.println(name);
 
+
 		       response.sendRedirect("h.html");
 
 		       response.setContentType("text/html");
 		       request.setAttribute("t2", s);
 		       request.getRequestDispatcher("/dash.jsp").forward(request, response);
 
+
+		       response.sendRedirect("h1.html");
+		       
+
 		           } 
 		           else
 		           {   System.out.println("duplicate");
+		           response.sendRedirect("h2.html");
 		           }
 		         
 		}
-
-		
-		else
-		{
+else
+{
 			System.out.println("pass do not match");
 			System.out.println(pass);
 			System.out.println(repass);
+			 response.sendRedirect("h3.html");
 		}
 		
 		}

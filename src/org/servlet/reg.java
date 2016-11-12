@@ -66,10 +66,11 @@ public class reg extends HttpServlet {
 		       request.setAttribute("t2", s);
 		       request.getRequestDispatcher("/dash.jsp").forward(request, response);
 
-	       }
+	       }   
 	       else
 	       {
 	    	   response.sendRedirect("h.html");
+	    	   response.sendRedirect("h4.html");
 	       }
 	       
 	     

@@ -7,29 +7,22 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
      
       <link rel="shortcut icon" type="image/png" href="assest/images/favicon.png">
+<meta charset="ISO-8859-1">
       <script>
 function myFunction() {
     document.getElementById("demo").innerHTML =document.getElementById("demo1").innerHTML;
-    }   
-     
-    function myFunction2() {
-        document.getElementById("demo").innerHTML =document.getElementById("demo2").innerHTML;
-        document.getElementById("demo1").innerHTML =" ";
-}
-    
-    
-
-</script>
-
-<meta charset="ISO-8859-1">
+    }
+     </script>    
 <title>Insert title here</title>
 </head>
+<body>
 <body background="imgs/i1.jpg"><font color=white><center>
 <h1>GDG JSS NOIDA</h1></center></font>
 <br>
-<br><br><br><br><br><br><br><br>
+<br><br><br><br><br>
 
 <div style="margin-left:4cm;margin-bottom:1cm;valign:middle;align:left;" id="demo">
+<font color="white"><b>&nbsp;&nbsp;&nbsp;&nbsp;ALREADY REGISTERED!!!</b></font><BR><BR>
 
  <button class="btn waves-effect waves-light indigo accent-4 centre-align hoverable" type="button" name="action" onclick="myFunction()">CLICK HERE TO CONTINUE
 
@@ -39,19 +32,8 @@ function myFunction() {
 <form action="reg" method=post>
 Enter Username :<input type=text  name=t1 required><br><br> 
 Enter Password :<input type=password name=t2 required><br>
-<input type=submit><a href="#" onclick="myFunction2()"><font color=red>Not Registered. Click Here</font></a>
-
+<input type=submit>
 </form></div> 
-<div style="display:none" id=demo2>
 
-<h1>SIGN UP</h1>
-<form action="resp" method="post" >
-Enter Admission no:<input type=text name=t5 required><br><br> 
-Enter Username:<input type=text name=t1 required><br><br> 
-Enter Email Id:<input type=text name=t4 required><br><br>
-Enter Password:<input type=password name=t2 id="p1" required ><br><br> 
-Confirm Password:<input type=password name=t3 id="p2"  required ><br><br><br>
-<input type=submit value="submit" onclick="myFunction3()" >
-</div>
 </body>
 </html>
