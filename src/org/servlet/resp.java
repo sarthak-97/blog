@@ -78,7 +78,8 @@ public class resp extends HttpServlet {
 		           else
 		           {   System.out.println("duplicate");
 		           }
-		          }
+		         
+		}
 
 		
 		else
