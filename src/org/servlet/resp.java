@@ -62,8 +62,7 @@ public class resp extends HttpServlet {
 		         }
 		        }
 		      
-		       
-		       
+		     
 		           if(f!=1){
 		    Userdet user= new Userdet();  
 		      
@@ -76,14 +75,13 @@ public class resp extends HttpServlet {
 		       session.close(); 
 		       user=null;
 		       System.out.println(name);
-<<<<<<< HEAD
+
 		       response.sendRedirect("h.html");
-=======
+
 		       response.setContentType("text/html");
 		       request.setAttribute("t2", s);
 		       request.getRequestDispatcher("/dash.jsp").forward(request, response);
 
->>>>>>> branch 'master' of https://github.com/sarthak-97/blog.git
 		           } 
 		           else
 		           {   System.out.println("duplicate");
