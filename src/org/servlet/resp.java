@@ -73,6 +73,7 @@ public class resp extends HttpServlet {
 		       session.close(); 
 		       user=null;
 		       System.out.println(name);
+		       
 		       response.sendRedirect("h.html");
 		           } 
 		           else

@@ -57,8 +57,7 @@ public class reg extends HttpServlet {
 	        	
 	        	break; 
 	        }
-	       
-	        }
+	       }
 	       System.out.println("delievered");
 	       if(f==1)
 	       {

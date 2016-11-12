@@ -13,7 +13,7 @@
 </head>
 <body> 
  <nav>
- <a href=h.html>Logout</a>
+ <a href=h.html>LOGOUT</a>
  </nav>
 
 	<form action="text" method="post">
@@ -31,6 +31,7 @@
     <option value="java">java</option>
     </optgroup>
     </select>
+
 
 		</div>
 		<textarea cols="80" id="editor1" name="editor1" rows="10">
