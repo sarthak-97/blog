@@ -20,6 +20,7 @@ import org.javabrain.dto.hiberterst;
  * Servlet implementation class resp
  */
 @WebServlet("/resp")
+
 public class resp extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -27,7 +28,7 @@ public class resp extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 
-		       
+		       String s;
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=UTF-8");
@@ -73,7 +74,10 @@ public class resp extends HttpServlet {
 		       session.close(); 
 		       user=null;
 		       System.out.println(name);
-		       response.sendRedirect("dash.jsp");
+		       response.setContentType("text/html");
+		       request.setAttribute("t2", s);
+		       request.getRequestDispatcher("/dash.jsp").forward(request, response);
+
 		           } 
 		           else
 		           {   System.out.println("duplicate");
