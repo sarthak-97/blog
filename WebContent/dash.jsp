@@ -15,6 +15,7 @@
  <nav>
  <a href=h.html>LOGOUT</a>
  </nav>
+ 
 
 	<form action="text" method="post">
 	<input type="text" name="t2" id="t5" value="<%= request.getAttribute("t2") %>" readonly >
