@@ -52,7 +52,7 @@
         <property name="hbm2ddl.auto">update</property>
 
         <mapping class="org.javabrain.Userdet"/>
-
+        <mapping class="org.javabrain.textedit"/>
     </session-factory>
 
 </hibernate-configuration>
