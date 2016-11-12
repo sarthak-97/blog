@@ -22,7 +22,7 @@ import org.javabrain.dto.hiberterst;
 @WebServlet("/reg")
 public class reg extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+    String s;
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -49,11 +49,11 @@ public class reg extends HttpServlet {
 	        Userdet user = (Userdet) allUsers.get(i);
 	        pa=user.getPass();
 	        na=user.getUserName();
-	        
+	        s=user.getAdmno();
 	        if(na.equals(nam) && pa.equals(pas))
 	        {
 	        	System.out.println("welcom");
-	        f=1; 
+	            f=1;
 	        	
 	        	break; 
 	        }
@@ -62,7 +62,10 @@ public class reg extends HttpServlet {
 	       System.out.println("delievered");
 	       if(f==1)
 	       {
-	    	   response.sendRedirect("dash.jsp");
+	    	   response.setContentType("text/html");
+		       request.setAttribute("t2", s);
+		       request.getRequestDispatcher("/dash.jsp").forward(request, response);
+
 	       }
 	       else
 	       {
@@ -72,6 +75,14 @@ public class reg extends HttpServlet {
 	     
 	       session.getTransaction().commit();
 	       session.close();
+	       response.setContentType("text/html");
+	       request.setAttribute("t2", s);
+	       request.getRequestDispatcher("/dash.jsp").forward(request, response);
 	}
-
+	
+	String admno()
+	{
+		return s;
+	}
+	
 }
