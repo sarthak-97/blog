@@ -79,7 +79,7 @@ public class resp extends HttpServlet {
 		       String message = "Example source code of Servlet to JSP communication.";
 		       request.setAttribute("message", message);
 		       request.getRequestDispatcher("dash.jsp").forward(request,response);
-		           }  
+		           } 
 		           else
 		           {   System.out.println("duplicate");
 		           }
