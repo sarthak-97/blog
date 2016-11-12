@@ -20,7 +20,7 @@
 	<form action="text" method="post">
 	<input type="text" name="t2" id="t5" value="<%= request.getAttribute("t2") %>" readonly >
 	
-	<br>
+
 		<div class="description">
 		<select id=3 name="t1">
     <optgroup label="1">

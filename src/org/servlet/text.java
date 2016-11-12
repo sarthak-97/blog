@@ -87,12 +87,12 @@ import org.javabrain.textedit;
 		       }
 		       if(f==1)
 		       {
-		    	   e=null;
+		    	   
 
 		       e.setAdmno(admno);
 		       if(categry.equals("tech"))
 		    	   e.setCatg1(name);
-		       else if(categry.equals("nature"))
+		       else if(categry.equals("nature")) 
 		    	   e.setCatg2(name);
 		       else if(categry.equals("science"))
 		    	   e.setCatg3(name);

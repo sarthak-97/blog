@@ -75,9 +75,7 @@ public class reg extends HttpServlet {
 	     
 	       session.getTransaction().commit();
 	       session.close();
-	       response.setContentType("text/html");
-	       request.setAttribute("t2", s);
-	       request.getRequestDispatcher("/dash.jsp").forward(request, response);
+	       
 	}
 	
 	String admno()
