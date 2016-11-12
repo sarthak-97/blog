@@ -2,6 +2,8 @@ package org.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -73,7 +75,10 @@ public class resp extends HttpServlet {
 		       session.close(); 
 		       user=null;
 		       System.out.println(name);
-		       response.sendRedirect("dash.jsp");
+		             
+		       String message = "Example source code of Servlet to JSP communication.";
+		       request.setAttribute("message", message);
+		       request.getRequestDispatcher("dash.jsp").forward(request,response);
 		           } 
 		           else
 		           {   System.out.println("duplicate");
