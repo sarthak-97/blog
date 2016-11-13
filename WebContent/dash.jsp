@@ -11,32 +11,43 @@
  
 </head>
 <body>
+<<<<<<< HEAD
 
 
 	<form action=self.jsp method="post">
 	<center><table width="100%" border="0" align="center">
+=======
+<center><table width="100%" border="0" align="center">
+>>>>>>> branch 'master' of https://github.com/sarthak-97/blog.git
 <tr> 
+<<<<<<< HEAD
 <td width="250" bgcolor="#33ddff"><height=50 width=90><SPAN STYLE="FONT-FAMILY:COMIC SANS MS ; COLOR:WHITE;VERTICAL-ALIGN:SUPER;FONT-SIZE:30"> <input type="text" size="30"  name="t2" id="t5" value="<%= request.getAttribute("t2") %>" readonly style=" FONT-FAMILY:COMIC SANS MS ; COLOR:WHITE;VERTICAL-ALIGN:bottom ;FONT-SIZE:30 ;border: none;
+=======
+<td width="250" bgcolor="#33ddff"><height=50 width=90><SPAN STYLE="FONT-FAMILY:COMIC SANS MS ; COLOR:WHITE;VERTICAL-ALIGN:SUPER;FONT-SIZE:30"> <input type="text" size="30"  name="t3" id="t5" value="  WELCOME <%= request.getAttribute("t2") %> TO THE EDITOR" readonly style=" FONT-FAMILY:COMIC SANS MS ; COLOR:WHITE;VERTICAL-ALIGN:bottom ;FONT-SIZE:30 ;border: none;
+>>>>>>> branch 'master' of https://github.com/sarthak-97/blog.git
  background-color: #33ddff; border-color: #33ddff" > </SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ <a href="homepage.html" STYLE="FONT-FAMILY:COMIC SANS MS ; COLOR:WHITE;VERTICAL-ALIGN:super;FONT-SIZE:20 ; text-decoration:none ; align:right">Home</a>
+<a href="about.asp" STYLE="FONT-FAMILY:COMIC SANS MS ; COLOR:WHITE;VERTICAL-ALIGN:super;FONT-SIZE:20 ; text-decoration:none ; align:right">About </a>
+<a href="addrec1.html" STYLE="FONT-FAMILY:COMIC SANS MS ; COLOR:WHITE;VERTICAL-ALIGN:super;FONT-SIZE:20 ; text-decoration:none ; align:right">Register</a>
+<a href="contact.asp" STYLE="FONT-FAMILY:COMIC SANS MS ; COLOR:WHITE;VERTICAL-ALIGN:super;FONT-SIZE:20 ; text-decoration:none ; align:right">Contact</a>
 
-
- <a  STYLE="FONT-FAMILY:COMIC SANS MS ; COLOR:WHITE;VERTICAL-ALIGN:super;FONT-SIZE:20 ; align:right" href=h.html >LOGOUT</a>
+ <a  STYLE="FONT-FAMILY:COMIC SANS MS ; COLOR:WHITE;VERTICAL-ALIGN:super;FONT-SIZE:20 ; align:right;text-decoration:none " href=h.html >Logout</a>
 
  </td>
 </tr>
 </table>
+<br>
 	
 
 	</center>
 
+
+	<form action="text" method="post">
+	
+<input type="text" size="30"  name="t2" id="t5" value="  WELCOME <%= request.getAttribute("t2") %> TO THE EDITOR" hidden >
 		<div class="description">
 		<select id=3 name="t1">
     <optgroup label="1">
@@ -52,6 +63,7 @@
       String b= document.getElementById('t5').value;
     </script>
 
+<<<<<<< HEAD
 		</div>
 		<%@ page import="java.sql.*" %>
 <% Class.forName("sun.jdbc.odbc.JdbcOdbcDriver"); %>
@@ -81,8 +93,19 @@
         
         %>
         <textarea cols="30" id="editor1" name="editor1" rows="10" >
+=======
+		</div><center>
+		<div style="width:70%;align:center ">
+		<textarea cols="30" id="editor1" name="editor1" rows="10">
+>>>>>>> branch 'master' of https://github.com/sarthak-97/blog.git
 	</textarea>
+<<<<<<< HEAD
 	<script type="text/javascript">
+=======
+	</div>
+	</center>
+		<script>
+>>>>>>> branch 'master' of https://github.com/sarthak-97/blog.git
 
 			CKEDITOR.replace( 'editor1' );
 		</script>
@@ -107,6 +130,7 @@
     
 		
 			<input type="submit" value="Submit">
+		
 		
 	</form>
 
