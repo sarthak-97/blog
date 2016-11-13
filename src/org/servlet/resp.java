@@ -61,8 +61,7 @@ public class resp extends HttpServlet {
 		         break; 
 		         }
 		        }
-		      
-		     
+		         
 		           if(f!=1){
 		    Userdet user= new Userdet();  
 		      
@@ -75,15 +74,6 @@ public class resp extends HttpServlet {
 		       session.close(); 
 		       user=null;
 		       System.out.println(name);
-
-
-		       response.sendRedirect("h.html");
-
-		       response.setContentType("text/html");
-		       request.setAttribute("t2", s);
-		       request.getRequestDispatcher("/dash.jsp").forward(request, response);
-
-
 		       response.sendRedirect("h1.html");
 		       
 
@@ -92,10 +82,12 @@ public class resp extends HttpServlet {
 		           {   System.out.println("duplicate");
 		           response.sendRedirect("h2.html");
 		           }
-		         
-		}
-else
-{
+		            
+			 }   
+
+		
+		else
+		{
 			System.out.println("pass do not match");
 			System.out.println(pass);
 			System.out.println(repass);
