@@ -11,20 +11,18 @@
  
 </head>
 <body>
-<<<<<<< HEAD
+
 
 
 	<form action=self.jsp method="post">
 	<center><table width="100%" border="0" align="center">
-=======
 <center><table width="100%" border="0" align="center">
->>>>>>> branch 'master' of https://github.com/sarthak-97/blog.git
-<tr> 
-<<<<<<< HEAD
+
+<tr>
 <td width="250" bgcolor="#33ddff"><height=50 width=90><SPAN STYLE="FONT-FAMILY:COMIC SANS MS ; COLOR:WHITE;VERTICAL-ALIGN:SUPER;FONT-SIZE:30"> <input type="text" size="30"  name="t2" id="t5" value="<%= request.getAttribute("t2") %>" readonly style=" FONT-FAMILY:COMIC SANS MS ; COLOR:WHITE;VERTICAL-ALIGN:bottom ;FONT-SIZE:30 ;border: none;
-=======
+
 <td width="250" bgcolor="#33ddff"><height=50 width=90><SPAN STYLE="FONT-FAMILY:COMIC SANS MS ; COLOR:WHITE;VERTICAL-ALIGN:SUPER;FONT-SIZE:30"> <input type="text" size="30"  name="t3" id="t5" value="  WELCOME <%= request.getAttribute("t2") %> TO THE EDITOR" readonly style=" FONT-FAMILY:COMIC SANS MS ; COLOR:WHITE;VERTICAL-ALIGN:bottom ;FONT-SIZE:30 ;border: none;
->>>>>>> branch 'master' of https://github.com/sarthak-97/blog.git
+
  background-color: #33ddff; border-color: #33ddff" > </SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -62,21 +60,14 @@
       String a = document.getElementById('3').value;
       String b= document.getElementById('t5').value;
     </script>
-
-<<<<<<< HEAD
 		</div>
 		<%@ page import="java.sql.*" %>
-<% Class.forName("sun.jdbc.odbc.JdbcOdbcDriver"); %>
+    <% Class.forName("com.mysql.jdbc.Driver"); %>
 
-        <H1>Database Lookup</H1>
-        
-
-
-        <H1>Fetching Data From a Database</H1>
 
         <% 
             Connection connection = DriverManager.getConnection(
-                "jdbc:odbc:data", "root", "Divy1996@");
+                "jdbc:mysql://localhost:3306/java", "root", "Divy1996@");
 
             Statement statement = connection.createStatement();
 
@@ -92,24 +83,17 @@
             } else {
         
         %>
-        <textarea cols="30" id="editor1" name="editor1" rows="10" >
-=======
 		</div><center>
 		<div style="width:70%;align:center ">
 		<textarea cols="30" id="editor1" name="editor1" rows="10">
->>>>>>> branch 'master' of https://github.com/sarthak-97/blog.git
-	</textarea>
-<<<<<<< HEAD
-	<script type="text/javascript">
-=======
-	</div>
-	</center>
-		<script>
->>>>>>> branch 'master' of https://github.com/sarthak-97/blog.git
-
+          </textarea>
+         <script type="text/javascript">
 			CKEDITOR.replace( 'editor1' );
 		</script>
+		</div>
+	</center>
 		 <% 
+		 
            if(request.getAttribute("1")=="tech")
         	   request.setAttribute("editor1",resultset.getString("catg1"));
            else if(request.getAttribute("2")=="nature")
