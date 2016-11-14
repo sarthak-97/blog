@@ -86,12 +86,10 @@
         
 		</div>
 	</center>
-            <% if(!resultset.next()) { 
-                ;
-            } else {%>
+            <% if(resultset.next()) {
+                
         
         
-		 <% 
 		 
            if(request.getAttribute("1")=="tech")
         	   request.setAttribute("editor1",resultset.getString("catg1"));
