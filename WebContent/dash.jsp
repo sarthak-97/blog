@@ -19,7 +19,7 @@
 <center><table width="100%" border="0" align="center">
 
 <tr>
-<td width="250" bgcolor="#33ddff"><height=50 width=90><SPAN STYLE="FONT-FAMILY:COMIC SANS MS ; COLOR:WHITE;VERTICAL-ALIGN:SUPER;FONT-SIZE:30"> <input type="text" size="30"  name="t2" id="t5" value="<%= request.getAttribute("t2") %>" readonly style=" FONT-FAMILY:COMIC SANS MS ; COLOR:WHITE;VERTICAL-ALIGN:bottom ;FONT-SIZE:30 ;border: none;
+
 
 <td width="250" bgcolor="#33ddff"><height=50 width=90><SPAN STYLE="FONT-FAMILY:COMIC SANS MS ; COLOR:WHITE;VERTICAL-ALIGN:SUPER;FONT-SIZE:30"> <input type="text" size="30"  name="t3" id="t5" value="  WELCOME <%= request.getAttribute("t2") %> TO THE EDITOR" readonly style=" FONT-FAMILY:COMIC SANS MS ; COLOR:WHITE;VERTICAL-ALIGN:bottom ;FONT-SIZE:30 ;border: none;
 
@@ -87,11 +87,8 @@
 		</div>
 	</center>
             <% if(resultset.next()) {
-                
-        
-        
-		 
-           if(request.getAttribute("1")=="tech")
+
+                 if(request.getAttribute("1")=="tech")
         	   request.setAttribute("editor1",resultset.getString("catg1"));
            else if(request.getAttribute("2")=="nature")
       	   request.setAttribute("editor1",resultset.getString("catg2"));
@@ -116,8 +113,3 @@
 	</form>
 
 	</body>
-
-
-
-
-</html>

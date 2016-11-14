@@ -48,6 +48,7 @@ import org.javabrain.textedit;
 		       s1=e.getAdmno();
 		       if(admno.equals(s1))
 		       {
+		    	   f=1;
 		    	   String query="";
 		    	   if(categry.equals("tech"))
 		    	   {
@@ -80,15 +81,13 @@ import org.javabrain.textedit;
 	               .executeUpdate();
 		    	   break;
 		       }
-		       else
-		       {
-		    	   f=1;
+		      
 		       }
-		       }
-		       if(f==1)
+		      
+		       if(f==0)
 		       {
 		    	   
-
+               e=new textedit();
 		       e.setAdmno(admno);
 		       if(categry.equals("tech"))
 		    	   e.setCatg1(name);
