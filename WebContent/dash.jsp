@@ -80,6 +80,9 @@
 		<div style="width:70%;align:center ">
 		<textarea cols="30" id="editor1" name="editor1" rows="10">
           </textarea>
+          <script type="text/javascript">		 +        
+ 			CKEDITOR.replace( 'editor1' );		
+ 		</script>
         
 		</div>
 	</center>
