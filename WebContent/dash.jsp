@@ -14,7 +14,7 @@
 
 
 
-	<form action=self.jsp method="post">
+	<form action="text" method="post">
 	<center><table width="100%" border="0" align="center">
 <center><table width="100%" border="0" align="center">
 
@@ -43,7 +43,7 @@
 	</center>
 
 
-	<form action="text" method="post">
+	<form action="#" method="post">
 	
 <input type="text" size="30"  name="t2" id="t5" value="  WELCOME <%= request.getAttribute("t2") %> TO THE EDITOR" hidden >
 		<div class="description">
@@ -75,23 +75,19 @@
             
 
             ResultSet resultset = 
-                statement.executeQuery("select * from textedit where admno = '" + id + "'") ; 
-
-            if(!resultset.next()) {
-                out.println("Sorry, could not find that publisher. " +
-                "Please <A HREF='tryAgain.html'>try again</A>.");
-            } else {
-        
-        %>
+                statement.executeQuery("select * from textedit where admno = '" + id + "'") ;  %>
 		</div><center>
 		<div style="width:70%;align:center ">
 		<textarea cols="30" id="editor1" name="editor1" rows="10">
           </textarea>
-         <script type="text/javascript">
-			CKEDITOR.replace( 'editor1' );
-		</script>
+        
 		</div>
 	</center>
+            <% if(!resultset.next()) { 
+                ;
+            } else {%>
+        
+        
 		 <% 
 		 
            if(request.getAttribute("1")=="tech")
