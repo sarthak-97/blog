@@ -45,7 +45,9 @@
 
 	<form action="#" method="post">
 	
-<input type="text" size="30"  name="t2" id="t5" value="<%= request.getAttribute("t2") %>" hidden >
+
+<input type="text" size="30"  name="t2" id="t5" value="  WELCOME <%= request.getAttribute("t2") %> TO THE EDITOR" hidden >
+
 		<div class="description">
 		<select id=3 name="t1">
     <optgroup label="1">
@@ -66,8 +68,7 @@
 
 
         <% 
-            Connection connection = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/java", "root", "sar115");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java", "root", "sar115");
 
             Statement statement = connection.createStatement();
 
