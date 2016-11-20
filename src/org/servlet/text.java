@@ -1,6 +1,7 @@
 package org.servlet;
 	
-	import java.io.IOException;
+	import java.awt.TextArea;
+import java.io.IOException;
 	import javax.servlet.ServletException;
 	import javax.servlet.annotation.WebServlet;
 	import javax.servlet.http.HttpServlet;
@@ -30,7 +31,7 @@ import org.javabrain.textedit;
 			response.setContentType("text/html;charset=UTF-8");
 			 int f=0;
 			String name=request.getParameter("editor1");
-			System.out.println(name);
+	
 			String categry=request.getParameter("t1");
             String admno=request.getParameter("t2");
 			SessionFactory sessionFactory =  new Configuration().configure().buildSessionFactory();        		
@@ -79,6 +80,9 @@ import org.javabrain.textedit;
 	               .setString("newName", name)//this will set the string 'newName' to name variable
 	               .setString("keyId",admno)
 	               .executeUpdate();
+		    	   response.setContentType("text/html");
+			       request.setAttribute("t2", admno);
+			       request.getRequestDispatcher("dbrec").forward(request, response);
 		    	   break;
 		       }
 		      
@@ -99,7 +103,10 @@ import org.javabrain.textedit;
 		    	   e.setCatg4(name);
 		       else if(categry.equals("java"))
 		    	   e.setCatg5(name);
-		      
+		       response.setContentType("text/html");
+		       request.setAttribute("t2",categry);
+		       request.getRequestDispatcher("admno").forward(request, response);
+
 		       }
                session.save(e);
 		       

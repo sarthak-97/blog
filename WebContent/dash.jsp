@@ -48,7 +48,13 @@
 
 	<form action="#" method="post">
 	
+<<<<<<< HEAD
 <input type="text" size="30"  name="t2" id="t5" value="<%= request.getAttribute("t2") %>" hidden >
+=======
+
+<input type="text" size="30"  name="t2" id="t5" value="  WELCOME <%= request.getAttribute("t2") %> TO THE EDITOR" hidden >
+
+>>>>>>> refs/remotes/origin/master
 		<div class="description">
 		<select id=3 name="t1">
     <optgroup label="1">
@@ -69,7 +75,11 @@
 
 
         <% 
+<<<<<<< HEAD
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java", "root", "Divy1996@");
+=======
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java", "root", "sar115");
+>>>>>>> refs/remotes/origin/master
 
             Statement statement = connection.createStatement();
 

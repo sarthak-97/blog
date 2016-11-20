@@ -2,25 +2,40 @@ package org.javabrain;
 
 import java.awt.TextArea;
 
+<<<<<<< HEAD
+=======
+import javax.persistence.Column;
+>>>>>>> refs/remotes/origin/master
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 
 @Entity
 public class textedit {
 	@Id
 private String admno;
+@ Lob
 private String catg1;
+@ Lob
 private String catg2;
+@ Lob
 private String catg3;
+@ Lob
 private String catg4;
+@ Lob
 private String catg5;
+<<<<<<< HEAD
 private String catg6;
+=======
+
+>>>>>>> refs/remotes/origin/master
 public String getAdmno() {
 	return admno;
 }
 public void setAdmno(String admno) {
 	this.admno = admno;
 }
+
 public String getCatg1() {
 	return catg1;
 }
