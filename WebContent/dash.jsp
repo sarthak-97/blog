@@ -1,5 +1,7 @@
 <html>
 <head>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ page import="java.sql.*" %>
 	<meta charset="utf-8">
 	<title>CKEditor Sample</title>
@@ -22,7 +24,7 @@
 <tr>
 
 
-<td width="250" bgcolor="#33ddff"><height=50 width=90><SPAN STYLE="FONT-FAMILY:COMIC SANS MS ; COLOR:WHITE;VERTICAL-ALIGN:SUPER;FONT-SIZE:30"> <input type="text" size="30"  name="t3" id="t5" value=" <%= request.getAttribute("t2") %> " readonly style=" FONT-FAMILY:COMIC SANS MS ; COLOR:WHITE;VERTICAL-ALIGN:bottom ;FONT-SIZE:30 ;border: none;
+<td width="250" bgcolor="#33ddff"><height=50 width=90><SPAN STYLE="FONT-FAMILY:COMIC SANS MS ; COLOR:WHITE;VERTICAL-ALIGN:SUPER;FONT-SIZE:30"> <input type="text" size="30"  name="t3" id="t5" value="  WELCOME <%= request.getAttribute("t2") %> TO THE EDITOR" readonly style=" FONT-FAMILY:COMIC SANS MS ; COLOR:WHITE;VERTICAL-ALIGN:bottom ;FONT-SIZE:30 ;border: none;
 
  background-color: #33ddff; border-color: #33ddff" > </SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -46,7 +48,7 @@
 
 	<form action="#" method="post">
 	
-<input type="text" size="30"  name="t2" id="t5" value=" <%= request.getAttribute("t2") %>" hidden >
+<input type="text" size="30"  name="t2" id="t5" value="<%= request.getAttribute("t2") %>" hidden >
 		<div class="description">
 		<select id=3 name="t1">
     <optgroup label="1">
@@ -67,13 +69,12 @@
 
 
         <% 
-            Connection connection = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/java", "root", "Divy1996@");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java", "root", "Divy1996@");
 
             Statement statement = connection.createStatement();
 
             String id =(String)request.getAttribute("t2");
-            String rs;
+            String rs;    
 
             ResultSet resultset = 
                 statement.executeQuery("select * from textedit where admno = '" + id + "'") ;  %>
@@ -87,27 +88,43 @@
         
 		</div>
 	</center>
-            <% if(resultset.next()) {
-
-                 if(request.getAttribute("3").equals("tech"))
-        	      rs=resultset.getString("catg1");
-           else if(request.getAttribute("3").equals("nature"))
-      	           rs=resultset.getString("catg2");
-           else if(request.getAttribute("3").equals("science"))
-          	       rs=resultset.getString("catg3");
-           else if(request.getAttribute("3").equals("sports"))
-          	   rs=resultset.getString("catg4");
-           else if(request.getAttribute("3").equals("java"))
-          	   rs=resultset.getString("catg5");
-       %>
+	<% if(resultset.next()){ %>
+             <select>
+            <c:forEach items="${3}" var="a">
+            <c:choose>
+                <c:when test="${a}.equals("tech")>
+                    <option value="${a}" selected>${a}</option>
+                    <% rs= rs=resultset.getString("catg1");%>   
+                </c:when>
+                 <c:when test="${a}.equals("nature")>
+                    <option value="${a}" selected>${a}</option>
+                    <% rs= rs=resultset.getString("catg2");%>   
+                </c:when>
+                 <c:when test="${a}.equals("science")>
+                    <option value="${a}" selected>${a}</option>
+                    <% rs= rs=resultset.getString("catg3");%>   
+                </c:when>
+                 <c:when test="${a}.equals("sports")>
+                    <option value="${a}" selected>${a}</option>
+                    <% rs= rs=resultset.getString("catg4");%>   
+                </c:when>
+                <c:otherwise>
+                     <option value="${a}" selected>${a}</option>
+                    <% rs= rs=resultset.getString("catg");%>
+                </c:otherwise>
+            </c:choose>
+        </c:forEach>
+    </select>
+       
        <% 
            } 
        %>
+       <script type="text/javascript">		 
+                   document.getElementById('editor1').value=rs;
+ 		</script>
+       
 		
-		<script type="text/javascript">
-		if(rs!=null)
-       document.getElementById('editor1').value=rs;
-    </script>
+		
 
     
 		

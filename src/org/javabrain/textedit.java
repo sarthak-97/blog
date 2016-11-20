@@ -1,5 +1,7 @@
 package org.javabrain;
 
+import java.awt.TextArea;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -12,6 +14,7 @@ private String catg2;
 private String catg3;
 private String catg4;
 private String catg5;
+private String catg6;
 public String getAdmno() {
 	return admno;
 }

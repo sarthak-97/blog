@@ -52,7 +52,7 @@ public class reg extends HttpServlet {
 	        s=user.getAdmno();
 	        if(na.equals(nam) && pa.equals(pas))
 	        {
-	        	System.out.println("welcom");
+	        	System.out.println("welcome");
 	            f=1;
 	        	
 	        	break; 
@@ -66,7 +66,8 @@ public class reg extends HttpServlet {
 		       request.setAttribute("t2", s);
 		       request.getRequestDispatcher("/dash.jsp").forward(request, response);
 
-	       }    	       else
+	       }    	       
+	       else
 	       {
 	    	   response.sendRedirect("h4.html");
 	       }
@@ -77,9 +78,5 @@ public class reg extends HttpServlet {
 	       
 	}
 	
-	String admno()
-	{
-		return s;
-	}
 	
 }
