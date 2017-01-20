@@ -1,5 +1,8 @@
 <html>
 <head>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ page import="java.sql.*" %>
 	<meta charset="utf-8">
 	<title>CKEditor Sample</title>
 	<script src="ckeditor/ckeditor.js"></script>
@@ -45,9 +48,13 @@
 
 	<form action="#" method="post">
 	
+<<<<<<< HEAD
+<input type="text" size="30"  name="t2" id="t5" value="<%= request.getAttribute("t2") %>" hidden >
+=======
 
 <input type="text" size="30"  name="t2" id="t5" value="  <%= request.getAttribute("t2") %> " hidden >
 
+>>>>>>> refs/remotes/origin/master
 		<div class="description">
 		<select id=3 name="t1">
     <optgroup label="1">
@@ -63,17 +70,21 @@
       String b= document.getElementById('t5').value;
     </script>
 		</div>
-		<%@ page import="java.sql.*" %>
+		
     <% Class.forName("com.mysql.jdbc.Driver"); %>
 
 
         <% 
+<<<<<<< HEAD
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java", "root", "Divy1996@");
+=======
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java", "root", "sar115");
+>>>>>>> refs/remotes/origin/master
 
             Statement statement = connection.createStatement();
 
             String id =(String)request.getAttribute("t2");
-            
+            String rs;    
 
             ResultSet resultset = 
                 statement.executeQuery("select * from textedit where admno = '" + id + "'") ;  %>
@@ -81,28 +92,47 @@
 		<div style="width:70%;align:center ">
 		<textarea cols="30" id="editor1" name="editor1" rows="10">
           </textarea>
-          <script type="text/javascript">		 +        
+          <script type="text/javascript">		         
  			CKEDITOR.replace( 'editor1' );		
  		</script>
         
 		</div>
 	</center>
-            <% if(resultset.next()) {
-
-                 if(request.getAttribute("1")=="tech")
-        	   request.setAttribute("editor1",resultset.getString("catg1"));
-           else if(request.getAttribute("2")=="nature")
-      	   request.setAttribute("editor1",resultset.getString("catg2"));
-           else if(request.getAttribute("2")=="science")
-          	   request.setAttribute("editor1",resultset.getString("catg3"));
-           else if(request.getAttribute("2")=="sports")
-          	   request.setAttribute("editor1",resultset.getString("catg4"));
-           else if(request.getAttribute("2")=="java")
-          	   request.setAttribute("editor1",resultset.getString("catg5"));
-       %>
+	<% if(resultset.next()){ %>
+             <select>
+            <c:forEach items="${3}" var="a">
+            <c:choose>
+                <c:when test="${a}.equals("tech")>
+                    <option value="${a}" selected>${a}</option>
+                    <% rs= rs=resultset.getString("catg1");%>   
+                </c:when>
+                 <c:when test="${a}.equals("nature")>
+                    <option value="${a}" selected>${a}</option>
+                    <% rs= rs=resultset.getString("catg2");%>   
+                </c:when>
+                 <c:when test="${a}.equals("science")>
+                    <option value="${a}" selected>${a}</option>
+                    <% rs= rs=resultset.getString("catg3");%>   
+                </c:when>
+                 <c:when test="${a}.equals("sports")>
+                    <option value="${a}" selected>${a}</option>
+                    <% rs= rs=resultset.getString("catg4");%>   
+                </c:when>
+                <c:otherwise>
+                     <option value="${a}" selected>${a}</option>
+                    <% rs= rs=resultset.getString("catg");%>
+                </c:otherwise>
+            </c:choose>
+        </c:forEach>
+    </select>
+       
        <% 
            } 
        %>
+       <script type="text/javascript">		 
+                   document.getElementById('editor1').value=rs;
+ 		</script>
+       
 		
 		
 
