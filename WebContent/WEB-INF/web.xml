@@ -5,6 +5,14 @@
     <welcome-file>index.html</welcome-file>
     <welcome-file>form.html</welcome-file>
   </welcome-file-list>
+   <servlet>
+    <servlet-name>reg</servlet-name>
+    <servlet-class>org.servlet.reg</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>reg</servlet-name>
+    <url-pattern>/reg/*</url-pattern>
+  </servlet-mapping>
   <servlet>
     <servlet-name>resp</servlet-name>
     <servlet-class>org.servlet.resp</servlet-class>

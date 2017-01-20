@@ -24,7 +24,9 @@ import org.javabrain.textedit;
 	
 		/**
 		 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-		 */
+		 */ 
+	
+	
 		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			
 			// TODO Auto-generated method stub
@@ -35,9 +37,41 @@ import org.javabrain.textedit;
 			String categry=request.getParameter("t1");
             String admno=request.getParameter("t2");
 			SessionFactory sessionFactory =  new Configuration().configure().buildSessionFactory();        		
-		       String s1;
+			   Session session =	sessionFactory.openSession();
+		       session.beginTransaction(); 
+		       textedit h= new textedit();
+		       String c;
+		       String cat1g= h.getCatg1();
+		         String catg12= h.getCatg2();
+		         String catg13= h.getCatg3();
+		         String catg14= h.getCatg4();
+		         String catg15= h.getCatg5();
+			    if(categry.equals("tech"))
+		         {
+		        	 
+		         }
+		         else if( categry.equals("nature"))
+		         {
+		        	 c=catg12;
+		         }
+		         else if(categry.equals("science"))
+		         {
+		        	 c=catg13;
+		         }
+		         else if(categry.equals("sports"))
+		         {
+		        	 c=catg14;
+		         }
+		         else if(categry.equals("java"))
+		         {
+		        	 c=catg15;
+		         }
+			   
+		     
+			
+			String s1;
 		      
-		       Session session =	sessionFactory.openSession();
+		     session =	sessionFactory.openSession();
 		       session.beginTransaction();
 		       Query queryResult = session.createQuery("from textedit");
 		       java.util.List allUsers;
@@ -80,10 +114,7 @@ import org.javabrain.textedit;
 	               .setString("newName", name)//this will set the string 'newName' to name variable
 	               .setString("keyId",admno)
 	               .executeUpdate();
-		    	   response.setContentType("text/html");
-			       request.setAttribute("t2", admno);
-			       request.getRequestDispatcher("dbrec").forward(request, response);
-		    	   break;
+		    	  
 		       }
 		      
 		       }
@@ -103,19 +134,60 @@ import org.javabrain.textedit;
 		    	   e.setCatg4(name);
 		       else if(categry.equals("java"))
 		    	   e.setCatg5(name);
-		       response.setContentType("text/html");
-		       request.setAttribute("t2",categry);
-		       request.getRequestDispatcher("admno").forward(request, response);
-
+		       
 		       }
                session.save(e);
 		       
 	    	   session.getTransaction().commit();
 		       session.close();
+		       e=null;
 		       
 		       
 		       System.out.println(categry);
 		       
+		       
+		       session =	sessionFactory.openSession();
+			      session.beginTransaction();
+			      String catgory;
+			      String g;
+			      g=null;
+			    e=(textedit) session.get(textedit.class, admno);
+			    String catg= e.getCatg1();
+		         String catg2= e.getCatg2();
+		         String catg3= e.getCatg3();
+		         String catg4= e.getCatg4();
+		         String catg5= e.getCatg5();
+			    if(categry.equals("tech"))
+		         {
+		        	 g=e.getCatg1();
+		         }
+		         else if( categry.equals("nature"))
+		         {
+		        	 g=catg2;
+		         }
+		         else if(categry.equals("science"))
+		         {
+		        	 g=catg3;
+		         }
+		         else if(categry.equals("sports"))
+		         {
+		        	 g=catg4;
+		         }
+		         else if(categry.equals("java"))
+		         {
+		        	 g=catg5;
+		         } 
+
+			    
+		     
+		         
+			    System.out.println(g);
+		       response.setContentType("text/html");
+		       request.setAttribute("t2",admno );
+		       request.getRequestDispatcher("/edit.jsp").forward(request, response);
+		        
+			      
+
 		}
 	
 	}
