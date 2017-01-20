@@ -2,10 +2,9 @@ package org.javabrain;
 
 import java.awt.TextArea;
 
-<<<<<<< HEAD
-=======
+
 import javax.persistence.Column;
->>>>>>> refs/remotes/origin/master
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Lob;
@@ -24,11 +23,9 @@ private String catg3;
 private String catg4;
 @ Lob
 private String catg5;
-<<<<<<< HEAD
-private String catg6;
-=======
 
->>>>>>> refs/remotes/origin/master
+private String catg6;
+
 public String getAdmno() {
 	return admno;
 }
